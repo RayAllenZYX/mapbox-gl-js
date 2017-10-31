@@ -33,7 +33,7 @@ function drawBackground(painter: Painter, sourceCache: SourceCache, layer: Backg
         painter.tileExtentPatternVAO.bind(gl, program, painter.tileExtentBuffer);
     } else {
         program = painter.useProgram('fill', painter.basicFillProgramConfiguration);
-        gl.uniform4fv(program.uniforms.u_color, color);
+        gl.uniform4f(program.uniforms.u_color, color.r, color.g, color.b, color.a);
         painter.tileExtentVAO.bind(gl, program, painter.tileExtentBuffer);
     }
 
